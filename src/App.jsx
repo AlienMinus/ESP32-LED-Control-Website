@@ -10,7 +10,7 @@ function App() {
   const [status, setStatus] = useState("Not Connected");
 
   const connectToESP = (ip) => {
-  const ws = new WebSocket("http://localhost:3001");
+  const ws = new WebSocket("https://esp32-led-control-website.onrender.com");
 
   ws.onopen = () => {
     ws.send(JSON.stringify({
