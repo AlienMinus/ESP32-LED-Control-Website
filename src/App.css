@@ -1,0 +1,103 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #020617;
+  padding: 26px 32px;
+  border-radius: 14px;
+  width: 360px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 18px;
+  color: #38bdf8;
+}
+
+/* IP input */
+.ip-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ip-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.ip-input input::placeholder {
+  color: #94a3b8;
+}
+
+.ip-input button {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #22c55e;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.ip-input button:hover {
+  background: #16a34a;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.controls button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.controls button:active {
+  transform: scale(0.96);
+}
+
+/* ON */
+.btn-on {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.btn-on:hover {
+  box-shadow: 0 0 12px #22c55e;
+}
+
+/* OFF */
+.btn-off {
+  background: #ef4444;
+  color: #450a0a;
+}
+
+.btn-off:hover {
+  box-shadow: 0 0 12px #ef4444;
+}
+
+/* Status */
+.status {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
