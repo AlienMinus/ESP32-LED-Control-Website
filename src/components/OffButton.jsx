@@ -1,7 +1,12 @@
 export default function OffButton({ socket }) {
   const sendOff = () => {
     if (socket && socket.readyState === WebSocket.OPEN) {
-      socket.send("OFF");
+      socket.send(
+        JSON.stringify({
+          type: "CMD",
+          value: "OFF",
+        }),
+      );
     }
   };
 

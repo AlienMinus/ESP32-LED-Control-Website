@@ -10,27 +10,23 @@ function App() {
   const [status, setStatus] = useState("Not Connected");
 
   const connectToESP = (ip) => {
-    const ws = new WebSocket(`ws://${ip}:81`);
+  const ws = new WebSocket("http://localhost:3001");
 
-    ws.onopen = () => {
-      setSocket(ws);
-      setConnected(true);
-      setStatus("Connected");
-      console.log("WebSocket connected");
-    };
-
-    ws.onclose = () => {
-      setConnected(false);
-      setSocket(null);
-      setStatus("Disconnected");
-      console.log("WebSocket closed");
-    };
-
-    ws.onerror = (err) => {
-      setStatus("Connection Error");
-      console.error("WebSocket error:", err);
-    };
+  ws.onopen = () => {
+    ws.send(JSON.stringify({
+      type: "CONNECT",
+      ip: ip
+    }));
   };
+
+  ws.onmessage = (msg) => {
+    const data = JSON.parse(msg.data);
+    console.log("Proxy:", data);
+  };
+
+  setSocket(ws);
+};
+
 
   return (
     <div className="app">

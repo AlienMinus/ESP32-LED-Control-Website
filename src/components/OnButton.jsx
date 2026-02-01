@@ -1,7 +1,12 @@
 export default function OnButton({ socket }) {
   const sendOn = () => {
     if (socket && socket.readyState === WebSocket.OPEN) {
-      socket.send("ON");
+      socket.send(
+        JSON.stringify({
+          type: "CMD",
+          value: "ON",
+        }),
+      );
     }
   };
 
